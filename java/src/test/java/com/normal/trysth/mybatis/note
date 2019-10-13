@@ -1,0 +1,32 @@
+refer from: http://prog3.com/sbdm/blog/luanlouis/article/details/40422941
+1.几个重要的api(组件)
+    SqlSession: 顶层的api,负责数据库的交互,crud
+        功能描述: 通过 statment id 找到对应的 mappedStatement 并交给执行器执行
+    Executor:   调度器,生成sql 语句,以及处理缓存
+    各种handler:
+        StatementHandler: sql 语句处理,如 set param
+        TypeHandler:      jdbc 数据类型 和 java 类型的转换
+        ResultSetHandler: 结果集处理
+
+    MappedStatement: 对xml update|insert|delete|select 节点的封装
+
+    SqlSource:  可以理解为一个sql 的提供者,例如sql 语句可能来源注解,可能是动态的sql语句,该api用于处理这种情况?
+
+    BoundSql:   组合了参数信息的sql 语句?
+
+    Configuration:  mybatis 的配置总线
+
+
+2. mapper 接口中的方法是如何绑定到xml中的sql的(xml,和annotation两种方式),具体流程
+
+crud操作最终落到sqlSession类中执行, sqlSession主要根据statement id (即mapper接口的全包名+接口名)在已注册的的
+mappedStatement 列表中找到对应的mappedStatement(简单的可以理解为sql的封装),然后交给executor执行.executor可以理解为
+sql 执行的调度器,执行一些与crud不相关的内容,如缓存(BaseExecutor 本身包含本地缓存的执行逻辑).
+接着, 通过SqlSource 接口获得BoundSql(实际执行的sql语句,包含一些动态sql所需要的额外参数信息)
+根据mappedStatement中的一些封装信息,执行sql操作,期间还会使用typeHandler,ResultHandler一些接口
+
+3. mybatis 中的缓存(一级缓存&二级缓存)
+
+
+
+

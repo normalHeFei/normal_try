@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "menu one",
+    "subMenuItemsList": [
+      {
+        "subTitle": "menu one title",
+        "subItems": [
+          {
+            "id": 11,
+            "parentId": 1,
+            "name": "menu one sub one "
+          },
+          {
+            "id": 12,
+            "parentId": 1,
+            "name": "menu one sub two"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "menu two",
+    "subMenuItemsList": [
+      {
+        "subTitle": "menu two title",
+        "subItems": [
+          {
+            "id": 21,
+            "parentId": 2,
+            "name": "menu two sub one "
+          },
+          {
+            "id": 22,
+            "parentId": 2,
+            "name": "menu two sub two"
+          }
+        ]
+      }
+    ]
+  }
+]

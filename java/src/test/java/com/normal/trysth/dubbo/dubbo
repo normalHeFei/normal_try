@@ -1,0 +1,6 @@
+1.服务的引用流程：
+    通过 ReferenceBean,该bean是一个factoryBean 负责消费端引用代理对象的创建：
+        引用对象的创建流程：
+2. 默认是用什么通信框架? 其他选择?
+    netty, mina. 对应的扩展接口是Transporter,Server,Client
+com.google.protobuf:protobuf-java:3.6.1

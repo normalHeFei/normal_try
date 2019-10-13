@@ -1,0 +1,9 @@
+1.channel,channelHandler,channelHandlerContext,ChannelPipeline
+
+- 每个channelHandler被添加到channelPipeline中的时候,都会创建一个对应的ChannelHandlerContext,每个ChannelHandler都有一个.
+
+2. ChannelHandler 添加 @ShareAble 代表可在多个ChannelPipeline中共享.在多个channelPipeline共享
+也意味着有多个channel可以执行到这个channelhandler,这就要求这个handler必须是线程安全的,通常使用@shareable
+修饰是为了统计不同channel的信息 
+
+
