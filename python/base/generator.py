@@ -4,7 +4,7 @@ def generator():
         yield i
 
 
-# generator exp
+# generator exp 推导式形式
 gen = (i for i in range(10))
 
 print(generator())
