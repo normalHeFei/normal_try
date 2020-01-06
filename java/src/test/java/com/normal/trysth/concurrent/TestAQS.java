@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TestAQS {
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock(false);
-        for (int i=0;i<10;i++) {
+        for (int i = 0; i < 10; i++) {
             new MultiThreadExeMethodBody(lock, "thread" + i)
                     .start();
         }
@@ -17,10 +17,10 @@ public class TestAQS {
 
 
     //多个线程执行的需要同步的方法块
-    static class MultiThreadExeMethodBody extends Thread{
+    static class MultiThreadExeMethodBody extends Thread {
         private ReentrantLock lock;
 
-        public MultiThreadExeMethodBody(ReentrantLock lock,String name) {
+        public MultiThreadExeMethodBody(ReentrantLock lock, String name) {
             super(name);
             this.lock = lock;
         }
@@ -38,7 +38,7 @@ public class TestAQS {
                 System.out.println(Thread.currentThread().getName() + "  wake up");
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 lock.unlock();
             }
         }

@@ -1,10 +1,6 @@
 package com.normal.trysth.redis;
 
 
-import com.normal.core.lock.CallBack;
-import com.normal.core.lock.DisReentrantLock;
-import com.normal.core.lock.DisReentrantLockExecutorTemplate;
-import com.normal.core.lock.RedisReentrantLock;
 import com.normal.trysth.objs.Student;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,7 +20,6 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
 /**
- *
  * @author hefei
  * @date 2017/7/25
  * "ERR"异常，refer to https://stackoverflow.com/questions/34200718/redis-troughs-err-operation-not-permitted-error-even-after-properly-running-fo
@@ -148,41 +143,5 @@ public class RedisTest {
         Assert.assertTrue(successCount == 1);
     }
 
-    @Test
-    public void testDistributedLock() throws InterruptedException {
-        int threadSize = 200;
-        CountDownLatch startLatch = new CountDownLatch(1);
-        CountDownLatch endLatch = new CountDownLatch(threadSize);
-
-        for (int i = 0; i < threadSize; i++) {
-            new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        startLatch.await();
-                        DisReentrantLock lock = new RedisReentrantLock("lockId", redisTemplate);
-                        DisReentrantLockExecutorTemplate template =new DisReentrantLockExecutorTemplate(lock);
-                        template.execute(1000, new CallBack() {
-                            @Override
-                            public Object onGetLock() {
-                                return null;
-                            }
-
-                            @Override
-                            public Object onTimeOut() {
-                                return null;
-                            }
-                        });
-                        endLatch.countDown();
-                    } catch (InterruptedException ignore) {
-
-                    }
-                }
-            }.start();
-        }
-        startLatch.countDown();
-        endLatch.await();
-
-    }
 
 }
