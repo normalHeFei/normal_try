@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>rem adapt</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body div {
+            width: 5rem;
+            height: 5rem;
+            background: #80B3FF;
+        }
+
+    </style>
+    <script>
+        function setStandard() {
+            //set 1 rem = ? px
+            document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth / 10 + 'px';
+        }
+        document.addEventListener('DOMContentLoaded', function (e) {
+            setStandard();
+        });
+        window.addEventListener('resize',setStandard)
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
