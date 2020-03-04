@@ -1,4 +1,4 @@
-package com.normal.trysth.spring.ioc;
+package com.normal.trysth.objs;
 
 /**
  * Created by hefei on 2017/9/20.

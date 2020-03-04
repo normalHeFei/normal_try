@@ -14,7 +14,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
  * 1.ValidationUtils
  * 2.error 由 messageCodeResolver解决
  */
-public class SpelTest {
+public class TestSpel {
     private ExpressionParser parser = new SpelExpressionParser();
 
 

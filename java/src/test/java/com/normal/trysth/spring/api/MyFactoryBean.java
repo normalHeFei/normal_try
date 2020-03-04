@@ -1,5 +1,6 @@
-package com.normal.trysth.spring.ioc;
+package com.normal.trysth.spring.api;
 
+import com.normal.trysth.objs.ComplexObj;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.context.ApplicationContext;
