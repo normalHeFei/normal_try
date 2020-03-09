@@ -8,7 +8,7 @@ import java.util.concurrent.Semaphore;
  * Created by hefei on 2017/8/25.
  * 作用：用来标记受限资源
  */
-public class SemaphoreTest {
+public class TestSemaphore {
 
     public static void main(String[] args) {
         int bound = 2;

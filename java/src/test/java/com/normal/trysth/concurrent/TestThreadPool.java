@@ -16,7 +16,7 @@ import java.util.concurrent.*;
  * 1.3： blockQueue:    阻塞队列，用于保存没有执行任务的runnable
  * 1.4: keepLiveTime:  不在核心线程中的线程最大存活时间
  */
-public class ThreadPoolTest {
+public class TestThreadPool {
 
     @Test
     public void testFixedPool() throws InterruptedException, ExecutionException, TimeoutException {

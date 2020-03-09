@@ -1,5 +1,9 @@
-package com.normal.trysth;
+package com.normal.trysth.concurrent;
 
+import org.junit.Test;
+
+import java.lang.ref.PhantomReference;
+import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
 /**
@@ -35,5 +39,26 @@ public class TestRefer {
                 }
             }
         }*/
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testPhantomReference() {
+        Object obj = new Object();
+        ReferenceQueue queue = new ReferenceQueue();
+        PhantomReference reference = new PhantomReference(obj, queue);
+        System.out.println("obj:" + queue.poll());
+        while (true) {
+            if (queue.poll() != null) {
+                System.out.println("had GC");
+                break;
+            }
+            System.gc();
+            System.out.println("not has GC , so not in queue");
+        }
+
+
     }
 }

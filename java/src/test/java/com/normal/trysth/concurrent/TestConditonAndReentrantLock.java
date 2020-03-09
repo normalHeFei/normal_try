@@ -1,4 +1,4 @@
-package com.normal.trysth;
+package com.normal.trysth.concurrent;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;

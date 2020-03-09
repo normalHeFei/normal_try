@@ -12,7 +12,7 @@ import java.util.concurrent.*;
  *  实现机制：将提交的runnable 或 callable 封装成一个QueueingFuture (extend FutureTask) “阻塞队列任务"
  *  保证提交的任务中，只要有一个完成了，take 就能拿到结果
  */
-public class CompletionServiceTest {
+public class TestCompletionService {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 

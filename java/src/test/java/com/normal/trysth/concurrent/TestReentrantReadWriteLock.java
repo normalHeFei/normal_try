@@ -1,4 +1,4 @@
-package com.normal.trysth;
+package com.normal.trysth.concurrent;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;

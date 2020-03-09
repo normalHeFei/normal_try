@@ -1,4 +1,4 @@
-package com.normal.trysth;
+package com.normal.trysth.concurrent;
 
 /**
  * @author hefei

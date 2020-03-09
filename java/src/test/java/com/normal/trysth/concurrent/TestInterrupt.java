@@ -24,7 +24,7 @@ import java.io.File;
  * 5.非标准的线程中断：socket 连接，nio，利用socketException来实现线程中断效果，可以通过
  * 6.对于需要用到中断来管理线程生命周期的场景，应该利用future，executorService来实现
  */
-public class Interrupt {
+public class TestInterrupt {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("当前线程名：" + Thread.currentThread().getName());

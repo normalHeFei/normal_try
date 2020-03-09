@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
  * 内存泄漏的问题发生在
  * 1. 线程池的情况，线程用完未回收，设置的value值也一直存在 在内存中
  */
-public class ThreadLocalTest {
+public class TestThreadLocal {
     public static void main(String[] args) {
         ThreadLocal<String> local = new ThreadLocal<>();
         local.set("这里是内容");

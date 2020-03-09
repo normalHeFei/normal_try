@@ -1,4 +1,4 @@
-package com.normal.trysth;
+package com.normal.trysth.concurrent;
 
 import java.math.BigDecimal;
 import java.util.*;
