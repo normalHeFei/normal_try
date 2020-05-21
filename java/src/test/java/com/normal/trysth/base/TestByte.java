@@ -7,9 +7,11 @@ public class TestByte {
     @Test
     public void testByte() {
 
-        Assert.assertEquals(4, Integer.bitCount(4));
+        Assert.assertEquals(4, Integer.BYTES);
+        Assert.assertEquals(4, Float.BYTES);
+        Assert.assertEquals(8, Long.BYTES);
 
-    }
+     }
 
     @Test
     public void testThreadLocal() {
