@@ -1,5 +1,7 @@
 package com.normal.trysth.concurrent;
 
+import org.junit.Test;
+
 import java.lang.ref.WeakReference;
 
 /**
@@ -38,6 +40,20 @@ public class TestThreadLocal {
 
         public Value(String name) {
             this.name = name;
+        }
+    }
+
+    @Test
+    public void test() {
+        ThreadLocal<Integer> varEachThread = ThreadLocal.withInitial(() -> 1);
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            new Thread(() -> {
+                if (finalI == 1) {
+                    varEachThread.set(varEachThread.get().intValue() + 1);
+                }
+                System.out.println(Thread.currentThread().getName() + "获取的值是: " + varEachThread.get());
+            }).start();
         }
     }
 }
