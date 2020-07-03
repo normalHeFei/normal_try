@@ -127,7 +127,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.30</version>
+        </dependency>
     </dependencies>
 
     <build>
