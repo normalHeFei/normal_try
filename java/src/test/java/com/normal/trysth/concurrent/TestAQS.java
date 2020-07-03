@@ -2,10 +2,6 @@ package com.normal.trysth.concurrent;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * @author hefei
- * @date 2018/7/6
- */
 public class TestAQS {
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock(false);
