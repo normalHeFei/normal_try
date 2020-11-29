@@ -2,22 +2,18 @@ package com.normal.trysth.concurrent;
 
 import org.junit.Test;
 
-<<<<<<< HEAD
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 /**
  * 1. System.arraycopy, 修改内部数组引用实现
  * 2. 写加锁， 读未加锁
  * 3. 不能保证实时一致性，像size 等方法无法保证实时正确
  * 4. 适用于 array 规模不大的情况，每次写都copy 消耗大
  */
-public class TestCopyOnWrite {
 
-    
-
-=======
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 1. copy on write 无法保持实时一致性, 只能保持最终一致性.
@@ -56,7 +52,7 @@ public class TestCopyOnWrite {
 
         System.out.println(list.size());
     }
->>>>>>> a428e7ef8b1cdb5cb7c5cd6ec8930eeae4bb5000
+
 
 
 }
