@@ -6,6 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>normal-try</artifactId>
     <version>1.0</version>
+    <properties>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+    </properties>
     <dependencies>
         <dependency>
             <!-- Import dependency management from Spring Boot -->
@@ -85,7 +88,7 @@
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
-            <version>4.3.0</version>
+            <version>4.7.0</version>
         </dependency>
         <!--es client -->
         <dependency>
@@ -114,7 +117,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>2.1.0.RELEASE</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle</groupId>
@@ -125,12 +127,27 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
+            <version>1.18.10</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>2.3.30</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.otter</groupId>
+            <artifactId>canal.client</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.11</version>
         </dependency>
     </dependencies>
 
