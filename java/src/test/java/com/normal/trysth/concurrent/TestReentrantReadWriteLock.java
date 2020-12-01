@@ -26,7 +26,7 @@ public class TestReentrantReadWriteLock {
     }
 
 
-    public static void testRead() {
+    public synchronized static void testRead() {
         ReadWriteLockProtectedData data = new ReadWriteLockProtectedData(rwl.readLock(), rwl.writeLock(), Lists.newArrayList("1", "2"));
         for (int i = 0; i < 10; i++) {
             new  Thread(){
