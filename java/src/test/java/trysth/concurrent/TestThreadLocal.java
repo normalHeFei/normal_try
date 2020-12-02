@@ -10,6 +10,8 @@ import java.lang.ref.WeakReference;
  * 每个线程都包含一个map，这个map的key 是threadLocal 的弱引用，value是真正设置的值
  * 内存泄漏的问题发生在
  * 1. 线程池的情况，线程用完未回收，设置的value值也一直存在 在内存中
+ *
+ * 泄漏的主要原因是 作为 弱引用的key被回收了, 但是value 还在.导致内存泄漏
  */
 public class TestThreadLocal {
     public static void main(String[] args) {
