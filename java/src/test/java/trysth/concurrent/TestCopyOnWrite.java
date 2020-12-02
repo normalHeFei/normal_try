@@ -1,4 +1,4 @@
-package com.normal.trysth.concurrent;
+package trysth.concurrent;
 
 import org.junit.Test;
 
