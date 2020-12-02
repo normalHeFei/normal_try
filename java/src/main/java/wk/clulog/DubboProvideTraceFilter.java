@@ -15,7 +15,7 @@ public class DubboProvideTraceFilter implements Filter {
         String traceIdStr = invocation.getAttachments().get(TraceId.key);
 
         if (traceIdStr == null) {
-            return new RpcResult("服务端未找到TradeId");
+            return new RpcResult("服务端未找到TraceId");
         }
 
         TraceId traceId = TraceId.valueOf(traceIdStr);
