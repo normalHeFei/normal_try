@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- 控制台打印日志的相关配置 -->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- 日志格式 -->
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss}[%level][%class{30}:%line] - %m%n</pattern>
-        </encoder>
+
+    <appender name="mqAppender1" class="wk.clulog.RocketMqAppender">
+        <param name="Tag" value="logTag" />
+        <param name="Topic" value="logTopic" />
+        <param name="ProducerGroup" value="logGroup" />
+        <param name="NameServerAddress" value="192.168.103.3:9876"/>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date %p %t - %m%n</pattern>
+        </layout>
     </appender>
+
+    <appender name="mqAsyncAppender1" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>1024</queueSize>
+        <discardingThreshold>80</discardingThreshold>
+        <maxFlushTime>2000</maxFlushTime>
+        <neverBlock>true</neverBlock>
+        <appender-ref ref="mqAppender1"/>
+    </appender>
+
+    <!--<appender name="mqAppender1" class="org.apache.rocketmq.logappender.logback.RocketmqLogbackAppender">
+        <tag>yourTag</tag>
+        <topic>yourLogTopic</topic>
+        <producerGroup>yourLogGroup</producerGroup>
+        <nameServerAddress>192.168.103.3:9876</nameServerAddress>
+        <layout>
+            <pattern>%date %p %t - %m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="mqAsyncAppender1" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>1024</queueSize>
+        <discardingThreshold>80</discardingThreshold>
+        <maxFlushTime>2000</maxFlushTime>
+        <neverBlock>true</neverBlock>
+        <appender-ref ref="mqAppender1"/>
+    </appender>
+-->
+
     <root level="INFO">
-        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="mqAppender1"/>
     </root>
 
 </configuration>

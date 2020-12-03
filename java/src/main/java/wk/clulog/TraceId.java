@@ -22,7 +22,7 @@ public class TraceId {
 
     @Override
     public String toString() {
-        return new StringBuffer(biz).append("_").append(url).toString();
+        return new StringBuffer(biz == null ? "" : biz).append("_").append(url).toString();
     }
 
     public static TraceId valueOf(String traceId) {
