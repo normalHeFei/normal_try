@@ -161,6 +161,11 @@
             <version>4.3.0</version>
             <!--<scope>test</scope>-->
         </dependency>
+        <dependency>
+            <groupId>org.squirrelframework</groupId>
+            <artifactId>squirrel-foundation</artifactId>
+            <version>0.3.8</version>
+        </dependency>
     </dependencies>
 
     <build>

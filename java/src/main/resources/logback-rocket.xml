@@ -19,24 +19,7 @@
         <appender-ref ref="mqAppender1"/>
     </appender>
 
-    <!--<appender name="mqAppender1" class="org.apache.rocketmq.logappender.logback.RocketmqLogbackAppender">
-        <tag>yourTag</tag>
-        <topic>yourLogTopic</topic>
-        <producerGroup>yourLogGroup</producerGroup>
-        <nameServerAddress>192.168.103.3:9876</nameServerAddress>
-        <layout>
-            <pattern>%date %p %t - %m%n</pattern>
-        </layout>
-    </appender>
 
-    <appender name="mqAsyncAppender1" class="ch.qos.logback.classic.AsyncAppender">
-        <queueSize>1024</queueSize>
-        <discardingThreshold>80</discardingThreshold>
-        <maxFlushTime>2000</maxFlushTime>
-        <neverBlock>true</neverBlock>
-        <appender-ref ref="mqAppender1"/>
-    </appender>
--->
 
     <root level="INFO">
         <appender-ref ref="mqAppender1"/>
